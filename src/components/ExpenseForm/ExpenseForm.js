@@ -10,6 +10,16 @@ const ExpenseForm = () => {
 
   const [enteredDate,grabDate] = useState('');
   const dateHandler = (event) => { grabDate(event.target.value); };
+
+  const formHandler = (event) => {
+    event.preventDefault();
+    const formData = {
+      title: enteredTitle,
+      amount: enteredAmount,
+      date: new Date(enteredDate).toUTCString(),
+    };
+    console.log(formData);
+  }
   return (
     <div>
       <form className='formdiv'>
@@ -22,11 +32,8 @@ const ExpenseForm = () => {
         <div className="new-expense__controls form-control">
           <input type="date" onChange={dateHandler}/>
         </div>
-        <p>{enteredTitle}</p>
-        <p>{enteredAmount}</p>
-        <p>{enteredDate}</p>
         <div className="new-expense__actions">
-          <button>Add Expense</button>
+          <button onClick={formHandler }>Add Expense</button>
         </div>
       </form>
     </div>
