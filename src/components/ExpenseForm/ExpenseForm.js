@@ -19,18 +19,21 @@ const ExpenseForm = () => {
       date: new Date(enteredDate).toUTCString(),
     };
     console.log(formData);
+    grabTitle('');
+    grabAmount('');
+    grabDate('');
   }
   return (
     <div>
       <form className='formdiv'>
         <div className='new-expense__controls form-control'>
-          <input type="text" onChange={titleHandler}/>
+          <input type="text" onChange={titleHandler} value={enteredTitle}/>
         </div>
         <div className="new-expense__controls form-control">
-          <input type="text" onChange={amountHandler}/>
+          <input type="text" onChange={amountHandler} value={enteredAmount}/>
         </div>
         <div className="new-expense__controls form-control">
-          <input type="date" onChange={dateHandler}/>
+          <input type="date" onChange={dateHandler} value={enteredDate}/>
         </div>
         <div className="new-expense__actions">
           <button onClick={formHandler }>Add Expense</button>
