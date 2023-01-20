@@ -3,14 +3,15 @@ import PropTypes from 'prop-types';
 import './NewExpense.css';
 import ExpenseForm from '../ExpenseForm/ExpenseForm';
 
-const NewExpense = () => {
+const NewExpense = (props) => {
 
   const sendingThisFunctionToExpenseFormComponent = (expenseDataFromExpenseForm) => {
     const newExpenseData = {
       ...expenseDataFromExpenseForm,
       id: Math.random().toString()
     };
-    console.log(newExpenseData);
+    //console.log(newExpenseData);
+    props.addData(newExpenseData);
   }
   return (
     <div className="new-expense">

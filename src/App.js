@@ -11,9 +11,13 @@ function App() {
     { title: 'Bike Insurance', 'date': 'March 10,2013', price: '456k' },
     { title: 'Health Checkup', 'date': 'March 11,2013', price: '87k' },
   ]
+  const addNewExpense = (expense) => {
+    console.log('In App.js');
+    console.log(expense);
+  }
   return (
     <div className="maindiv">
-    <NewExpense/>
+    <NewExpense addData={addNewExpense}/>
       {/*{
         expenses.map(el => <Expenses data={el}></Expenses>)
       }*/}
