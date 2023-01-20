@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ExpenseForm.css';
-
-const ExpenseForm = () => {
+import NewExpense from '../NewExpense/NewExpense';
+const ExpenseForm = (props) => {
   const [count,setCount] = useState(0);
   const countHandler = (event) => {
     event.preventDefault();
@@ -29,7 +29,8 @@ const ExpenseForm = () => {
       amount: enteredAmount,
       date: new Date(enteredDate).toUTCString(),
     };
-    console.log(formData);
+    props.sendData(formData);
+    //console.log(formData);
     grabTitle('');
     grabAmount('');
     grabDate('');

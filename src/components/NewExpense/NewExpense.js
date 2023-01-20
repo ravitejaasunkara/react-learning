@@ -3,11 +3,22 @@ import PropTypes from 'prop-types';
 import './NewExpense.css';
 import ExpenseForm from '../ExpenseForm/ExpenseForm';
 
-const NewExpense = () => (
-  <div className="new-expense">
-    <ExpenseForm/>
-  </div>
-);
+const NewExpense = () => {
+
+  const sendingThisFunctionToExpenseFormComponent = (expenseDataFromExpenseForm) => {
+    const newExpenseData = {
+      ...expenseDataFromExpenseForm,
+      id: Math.random().toString()
+    };
+    console.log(newExpenseData);
+  }
+  return (
+    <div className="new-expense">
+      <ExpenseForm sendData={sendingThisFunctionToExpenseFormComponent}/>
+    </div>
+  );
+}
+
 
 
 export default NewExpense;
