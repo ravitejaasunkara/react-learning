@@ -39,18 +39,17 @@ const ExpenseForm = (props) => {
   return (
     <div>
       <form className='formdiv'>
-        <div className='new-expense__controls form-control'>
-          <input type="text" onChange={titleHandler} value={enteredTitle} />
+        <div className='new-expense__controls'>
+          <label htmlFor="title">Title</label>
+          <input type="text" onChange={titleHandler} value={enteredTitle} id='title' className='form-control'/>
         </div>
-        <div className="new-expense__controls form-control">
-          <input type="text" onChange={amountHandler} value={enteredAmount} />
+        <div className="new-expense__controls" id='amount'>
+          <label htmlFor="amount">Amount</label>
+          <input type="text" onChange={amountHandler} value={enteredAmount} className='form-control'/>
         </div>
-        <div className="new-expense__controls form-control">
-          <input type="date" onChange={dateHandler} value={enteredDate} />
-        </div>
-        <div>
-          <p>{count}</p>
-          <button onClick={countHandler}>Counter</button>
+        <div className="new-expense__controls">
+          <label htmlFor="date">Date</label>
+          <input type="date" onChange={dateHandler} value={enteredDate} id='date' className='form-control'/>
         </div>
         <div className="new-expense__actions">
           <button onClick={formHandler}>Add Expense</button>

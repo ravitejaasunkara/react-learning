@@ -10,7 +10,6 @@ const NewExpense = (props) => {
       ...expenseDataFromExpenseForm,
       id: Math.random().toString()
     };
-    //console.log(newExpenseData);
     props.addData(newExpenseData);
   }
   return (
@@ -19,7 +18,4 @@ const NewExpense = (props) => {
     </div>
   );
 }
-
-
-
 export default NewExpense;
