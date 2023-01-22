@@ -2,11 +2,6 @@ import React, { useState } from 'react';
 import './ExpenseForm.css';
 import NewExpense from '../NewExpense/NewExpense';
 const ExpenseForm = (props) => {
-  const [count,setCount] = useState(0);
-  const countHandler = (event) => {
-    event.preventDefault();
-    setCount(count+1);
-  }
   const [enteredTitle, grabTitle] = useState('');
   const titleHandler = (event) => {
     grabTitle(event.target.value)
@@ -26,15 +21,14 @@ const ExpenseForm = (props) => {
     event.preventDefault();
     const formData = {
       title: enteredTitle,
-      amount: enteredAmount,
       date: new Date(enteredDate).toUTCString(),
+      price: enteredAmount,
     };
     props.sendData(formData);
     //console.log(formData);
     grabTitle('');
     grabAmount('');
     grabDate('');
-    setCount(0);
   }
   return (
     <div>

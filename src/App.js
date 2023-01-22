@@ -15,7 +15,9 @@ function App() {
   
   const [expenses,addExpense] = useState(INITIAL_EXPENSE);
   const addNewExpense = (expense) => {
-    addExpense([expense,...expenses]);
+    addExpense(prevData => {
+      return [expense,...prevData];
+    });
   }
   return (
     <div className="maindiv">

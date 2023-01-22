@@ -5,8 +5,8 @@ import ExpenseForm from '../ExpenseForm/ExpenseForm';
 
 
 function ExpenseItem(props) {
-
-  const [title,setTitle] = useState(props.title);
+  console.log(props.title);
+  const [header,setTitle] = useState(props.title);
   const clickHandler = () => {
     setTitle('Updated!');
   }
@@ -14,7 +14,7 @@ function ExpenseItem(props) {
   return (
     <div className="maindiv">
       <div className="expenses">
-        <div>{title}</div>
+        <div>{header}</div>
         <div>
           <ExpenseDate date={props.date}></ExpenseDate>
         </div>
