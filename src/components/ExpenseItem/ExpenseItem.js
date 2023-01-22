@@ -5,7 +5,6 @@ import ExpenseForm from '../ExpenseForm/ExpenseForm';
 
 
 function ExpenseItem(props) {
-  console.log(props.title);
   const [header,setTitle] = useState(props.title);
   const clickHandler = () => {
     setTitle('Updated!');

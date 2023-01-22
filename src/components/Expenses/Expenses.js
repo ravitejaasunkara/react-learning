@@ -1,12 +1,19 @@
 import ExpenseItem from "../ExpenseItem/ExpenseItem";
-function Expenses(props){
+function Expenses(props) {
+  let expensesData = props.items.map(
+    (item) => {
+      return <ExpenseItem
+        title={item.title}
+        date={item.date}
+        price={item.price}>
+        key={item.id}
+      </ExpenseItem>
+    })
   return (
     <div>
-    {
-      props.items.map((item) => {
-        return <ExpenseItem title={item.title} date={item.date} price={item.price}></ExpenseItem>
-      })
-    }
+      {
+        expensesData
+      }
     </div>
   );
 }
